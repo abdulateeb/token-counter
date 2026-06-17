@@ -1,10 +1,12 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-// GitHub Pages serves the project site under /<repo>/.
-// Set base so built asset URLs resolve correctly.
+// Served from the custom apex domain (tokencounter.tech) at the root path,
+// so the base is "/". If you ever drop the custom domain and use the
+// project URL (abdulateeb.github.io/token-counter/), change this back to
+// "/token-counter/".
 export default defineConfig({
-  base: "/token-counter/",
+  base: "/",
   plugins: [react()],
   build: {
     target: "es2020",
