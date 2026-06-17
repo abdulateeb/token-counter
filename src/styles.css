@@ -1,0 +1,154 @@
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #0a0a0c;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* ---- Hero / 3D scene ---------------------------------------------------- */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--gray-a4);
+  background: radial-gradient(
+    120% 100% at 50% 0%,
+    #16161a 0%,
+    #0a0a0c 70%
+  );
+}
+
+.token-scene {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  /* Decorative only; let wheel/touch scroll pass through to the page. */
+  pointer-events: none;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 10, 12, 0.1) 0%,
+    rgba(10, 10, 12, 0.55) 60%,
+    rgba(10, 10, 12, 0.92) 100%
+  );
+}
+
+.hero-title {
+  letter-spacing: -0.03em;
+  color: #fff;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.85), 0 1px 4px rgba(0, 0, 0, 0.9);
+}
+
+.hero-sub {
+  max-width: 34rem;
+  line-height: 1.55;
+}
+
+/* ---- Main panel --------------------------------------------------------- */
+
+.panel {
+  margin-top: 2.5rem;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 20px 60px -20px rgba(0, 0, 0, 0.7);
+}
+
+.input-area textarea {
+  font-family: "Menlo", "Consolas", ui-monospace, monospace;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.stat-value {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+.stat-label {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ---- Tokenized output --------------------------------------------------- */
+
+.token-output {
+  font-family: "Menlo", "Consolas", ui-monospace, monospace;
+  font-size: 14px;
+  line-height: 2.1;
+  white-space: pre-wrap;
+  word-break: break-word;
+  padding: 16px;
+  border-radius: var(--radius-4);
+  background: var(--gray-a2);
+  border: 1px solid var(--gray-a4);
+  min-height: 96px;
+  max-height: 360px;
+  overflow-y: auto;
+}
+
+.token-output.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.token-chip {
+  border-radius: 4px;
+  padding: 2px 0;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.token-ids {
+  color: var(--blue-11);
+  word-break: break-all;
+}
+
+/* ---- Explainer ---------------------------------------------------------- */
+
+.explainer-card {
+  flex: 1 1 260px;
+  max-width: 340px;
+}
+
+/* ---- Footer ------------------------------------------------------------- */
+
+.footer {
+  border-top: 1px solid var(--gray-a4);
+  background: #08080a;
+  padding: 20px 16px;
+  text-align: center;
+}
+
+/* ---- Responsive --------------------------------------------------------- */
+
+@media (max-width: 640px) {
+  .hero-title {
+    font-size: 2.4rem;
+  }
+  .panel {
+    margin-top: 1.5rem;
+  }
+  .explainer-card {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+}
