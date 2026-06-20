@@ -1,1 +1,3 @@
-# Open Source Token Counter
+### Open Source Token Counter
+
+Go To ➜ https://tokencounter.tech/
